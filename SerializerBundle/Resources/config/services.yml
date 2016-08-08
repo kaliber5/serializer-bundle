@@ -1,0 +1,6 @@
+services:
+  kaliber5.media.image.serializer:
+    class: Kaliber5\SerializerBundle\Handler\MediaImageHandler
+    arguments: [ @sonata.media.pool ]
+    tags:
+      - { name: jms_serializer.subscribing_handler }
