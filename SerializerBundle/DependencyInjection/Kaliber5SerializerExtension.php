@@ -21,8 +21,13 @@ class Kaliber5SerializerExtension extends Extension
     {
         $configuration = new Configuration();
         $this->processConfiguration($configuration, $configs);
+        $bundles = $container->getParameter('kernel.bundles');
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
+
+        if (isset($bundles['SonataMediaBundle'])) {
+            $loader->load('media.yml');
+        }
     }
 }

@@ -1,6 +1,8 @@
 services:
-  kaliber5.media.image.serializer:
-    class: Kaliber5\SerializerBundle\Handler\MediaImageHandler
-    arguments: [ @sonata.media.pool ]
+  kaliber5.decoder.json_api:
+    class: Kaliber5\SerializerBundle\Decoder\JsonApiDecoder
     tags:
-      - { name: jms_serializer.subscribing_handler }
+      - { name: k5.logger.logging }
+
+  kaliber5.normalizer.camel_keys:
+    class: Kaliber5\SerializerBundle\Normalizer\CamelKeysNormalizer
