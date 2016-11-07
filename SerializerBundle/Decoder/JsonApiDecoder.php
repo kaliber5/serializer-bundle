@@ -8,8 +8,6 @@
 
 namespace Kaliber5\SerializerBundle\Decoder;
 
-use Kaliber5\LoggerBundle\LoggingTrait\LoggingTrait;
-
 /**
  * Decoder for FOSRestBundle to support JSON:API encoded payload for POST/PATCH requests
  * Enable this in your config:
@@ -23,7 +21,6 @@ use Kaliber5\LoggerBundle\LoggingTrait\LoggingTrait;
  */
 class JsonApiDecoder
 {
-    use LoggingTrait;
 
     /**
      * @param string $data
@@ -34,12 +31,10 @@ class JsonApiDecoder
     {
         // @todo this probably needs refactoring to use JMSSerializer decoding to support relations!?
         $decoded = @json_decode($data, true);
-        $this->logDebug('Data received: '.print_r($decoded, true));
         $attributes = $decoded['data']['attributes'];
         if (isset($decoded['data']['relationships'])) {
             $attributes['relationships'] = $decoded['data']['relationships'];
         }
-        $this->logDebug('Return Data: '.print_r($attributes, true));
 
         return $attributes;
     }
