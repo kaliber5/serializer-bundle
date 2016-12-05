@@ -13,12 +13,12 @@
         }
     ],
     "require": {
-        "symfony/symfony": "^2.7.0",
+        "symfony/symfony": "^3.2",
         "sonata-project/media-bundle": "^2.3 || ^3.0",
         "steffenbrem/json-api-bundle": "dev-master@dev"
     },
     "require-dev": {
-        "phpspec/phpspec": "^2.5"
+        "phpspec/phpspec": "^3.2"
     },
     "autoload": {
         "psr-4": { "Kaliber5\\SerializerBundle\\": "SerializerBundle/" }
