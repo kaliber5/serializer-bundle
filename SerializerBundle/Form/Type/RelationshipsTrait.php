@@ -42,7 +42,9 @@ trait RelationshipsTrait
         $data = $formEvent->getData();
         if (isset($data['relationships'])) {
             foreach ($data['relationships'] as $relationship => $relData) {
-                $data[$relationship] = $relData['data']['id'];
+                if (isset($relData['data']['id'])) {
+                    $data[$relationship] = $relData['data']['id'];
+                }
             }
             unset($data['relationships']);
             $formEvent->setData($data);

@@ -4,3 +4,8 @@ services:
 
   kaliber5.normalizer.camel_keys:
     class: Kaliber5\SerializerBundle\Normalizer\CamelKeysNormalizer
+
+  kaliber5.form.type_extension.form.request_handler:
+    class: Kaliber5\SerializerBundle\Form\Extension\HttpFoundation\HttpFoundationRequestHandler
+    decorates: 'form.type_extension.form.request_handler'
+    public: false
