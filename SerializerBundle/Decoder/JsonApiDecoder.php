@@ -16,7 +16,7 @@ namespace Kaliber5\SerializerBundle\Decoder;
  * fos_rest:
  *   body_listener:
  *     decoders:
- *       json: k5serializer.decoder.json_api
+ *       json: kaliber5.decoder.json_api
  * ```
  */
 class JsonApiDecoder
