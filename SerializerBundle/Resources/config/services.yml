@@ -1,3 +1,6 @@
+parameters:
+  jms_serializer.form_error_handler.class: Kaliber5\SerializerBundle\Handler\FormErrorHandler
+
 services:
   kaliber5.decoder.json_api:
     class: Kaliber5\SerializerBundle\Decoder\JsonApiDecoder
