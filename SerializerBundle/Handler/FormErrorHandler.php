@@ -49,8 +49,8 @@ class FormErrorHandler extends JMSFormErrorHandler
         foreach ($data->getErrors(true) as $error) {
             /** @var FormError $error */
             $errors[] = [
-                'title'  => "{$error->getOrigin()->getName()} is invalid",
-                'detail' => $this->getErrorMessage($error),
+                'title'  => "{$error->getOrigin()->getPropertyPath()} is invalid",
+                'detail' => $this->getErrorMessage($error)
             ];
         }
 
