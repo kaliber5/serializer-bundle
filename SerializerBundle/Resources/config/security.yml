@@ -1,0 +1,19 @@
+services:
+  kaliber5.api.security.authentication.failure_handler:
+    class:  Kaliber5\SerializerBundle\Handler\AuthenticationFailureHandler
+    arguments:  ["@http_kernel", "@security.http_utils", {}, "@logger"]
+    tags:
+        - { name: 'monolog.logger', channel: 'security' }
+
+  kaliber5.api.services.security.api_entry_point:
+    class:  Kaliber5\SerializerBundle\EntryPoint\Api
+
+  kaliber5.api.services.logout_handler:
+    class:  Kaliber5\SerializerBundle\Handler\LogoutHandler
+    arguments:  ["@security.http_utils", "@session"]
+
+  kaliber5.api.security.authentication.success_handler:
+    class:  Kaliber5\SerializerBundle\Handler\AuthenticationSuccessHandler
+    arguments:  ["@security.http_utils", {}, "@jms_serializer"]
+    tags:
+        - { name: 'monolog.logger', channel: 'security' }
