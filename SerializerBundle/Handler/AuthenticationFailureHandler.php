@@ -46,8 +46,9 @@ class AuthenticationFailureHandler extends DefaultAuthenticationFailureHandler
      */
     public function onAuthenticationFailure(Request $request, AuthenticationException $exception)
     {
-
-        if ($request->isXmlHttpRequest()) {
+        // Return JSON when client requested this
+        // More reliable that $request->isXmlHttpRequest()
+        if (in_array('application/json', $request->getAcceptableContentTypes())) {
             $result = ['success' => false, 'message' => $exception->getMessage()];
             $response = new JsonResponse($result, 401);
             $response->headers->set('Content-Type', 'application/json');
