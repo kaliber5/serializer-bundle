@@ -13,4 +13,5 @@ services:
     decorates: 'form.type_extension.form.request_handler'
     public: false
 
-  sylius.resource_controller.pagerfanta_representation_factory: Kaliber5\SerializerBundle\Hateoas\PagerfantaFactory
+  sylius.resource_controller.pagerfanta_representation_factory:
+    class: Kaliber5\SerializerBundle\Hateoas\PagerfantaFactory
