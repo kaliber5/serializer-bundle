@@ -12,3 +12,5 @@ services:
     class: Kaliber5\SerializerBundle\Form\Extension\HttpFoundation\HttpFoundationRequestHandler
     decorates: 'form.type_extension.form.request_handler'
     public: false
+
+  sylius.resource_controller.pagerfanta_representation_factory: Kaliber5\SerializerBundle\Hateoas\PagerfantaFactory
