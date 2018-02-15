@@ -31,7 +31,13 @@ class JsonApiDecoder
     {
         // @todo this probably needs refactoring to use JMSSerializer decoding to support relations!?
         $decoded = @json_decode($data, true);
-        $attributes = $decoded['data']['attributes'];
+        if (!isset($decoded['data'])) {
+            return $decoded;
+        }
+        $attributes = [];
+        if (isset($decoded['data']['attributes'])) {
+            $attributes = $decoded['data']['attributes'];
+        }
         if (isset($decoded['data']['relationships'])) {
             $attributes['relationships'] = $decoded['data']['relationships'];
         }
