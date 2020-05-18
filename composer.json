@@ -16,7 +16,8 @@
         "symfony/symfony": "^3.2|^4.0",
         "sonata-project/media-bundle": "^2.3 || ^3.0",
         "steffenbrem/json-api-bundle": "^0.2@dev",
-        "jms/serializer": "^0.13 || ^1.0 || ^2.0"
+        "jms/serializer": "^0.13 || ^1.0 || ^2.0 || ^3.0",
+        "friendsofsymfony/rest-bundle": "^2.0"
     },
     "require-dev": {
         "phpspec/phpspec": "^3.2"
